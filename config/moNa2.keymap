@@ -75,6 +75,11 @@
             key-positions = <19 20>;
         };
 
+        middleclick {
+            bindings = <&mkp MB3>;
+            key-positions = <18 19 20>;
+        };
+
         alt+space {
             bindings = <&kp LA(SPACE)>;
             key-positions = <13 18>;
@@ -180,10 +185,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans    &trans                          &trans    &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans    &trans    &trans      &trans    &trans    &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3    &mkp MB4  &mkp MB5                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &trans    &trans    &trans
+&trans  &mo 6   &trans  &trans  &trans    &trans    &trans  &trans    &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans    &mkp MB4  &mkp MB5  &trans    &trans
+&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
