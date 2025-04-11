@@ -6,6 +6,46 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
 
+#define JP_ZKHK  GRAVE        // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
+#define JP_MINUS MINUS        // -
+#define JP_CARET EQUAL        // ^
+#define JP_YEN   INT3         // ¥
+#define JP_AT    LBKT         // @
+#define JP_LBKT  RBKT         // [
+#define JP_EISU  CAPS         // Eisū (英数)
+#define JP_SEMI  SEMI         // ;
+#define JP_COLON SQT          // :
+#define JP_RBKT  NUHS         // ]
+#define JP_COMMA COMMA        // ,
+#define JP_DOT   DOT          // .
+#define JP_SLASH SLASH        // /
+#define JP_BSLH  INT1         // (backslash)
+#define JP_MHEN  INT5         // Muhenkan (無変換)
+#define JP_HENK  INT4         // Henkan (変換)
+#define JP_KANA  INT2         // Katakana ↔ Hiragana ↔ Rōmaji (カタカナ ↔ ひらがな ↔ ローマ字)
+#define JP_EXCL  LS(N1)       // !
+#define JP_DQT   LS(N2)       // "
+#define JP_HASH  LS(N3)       // #
+#define JP_DLLR  LS(N4)       // $
+#define JP_PRCNT LS(N5)       // %
+#define JP_AMPS  LS(N6)       // &
+#define JP_SQT   LS(N7)       // '
+#define JP_LPAR  LS(N8)       // (
+#define JP_RPAR  LS(N9)       // )
+#define JP_EQUAL LS(JP_MINUS) // =
+#define JP_TILDE LS(JP_CARET) // ~
+#define JP_PIPE  LS(JP_YEN)   // |
+#define JP_GRAVE LS(JP_AT)    // `
+#define JP_LBRC  LS(JP_LBKT)  // {
+#define JP_CAPS  LS(JP_EISU)  // Caps Lock
+#define JP_PLUS  LS(JP_SEMI)  // +
+#define JP_ASTRK LS(JP_COLON) // *
+#define JP_RBRC  LS(JP_RBKT)  // }
+#define JP_LT    LS(JP_COMMA) // <
+#define JP_RT    LS(JP_DOT)   // >
+#define JP_QMARK LS(JP_SLASH) // ?
+#define JP_UNDER LS(JP_BSLH)  // _
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -76,7 +116,7 @@
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E    &kp R           &kp T                                              &kp Y  &kp U  &kp I      &kp O    &mt MINUS P
 &kp A             &lt 6 S       &lt 4 D  &lt 3 F         &kp G  &trans                       &kp BACKSPACE  &kp H  &kp J  &kp K      &kp L    &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C    &kp V           &kp B  &mt PRINTSCREEN LA(SPACE)    &kp DELETE     &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C    &kp V           &kp B  &mt PRINTSCREEN ESCAPE       &kp DELETE     &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp TAB  &kp LEFT_SHIFT  &mo 1  &mt LEFT_ALT SPACE           &kp ENTER      &mo 2                             &mo 5
             >;
 
@@ -86,8 +126,8 @@
         layer_1 {
             bindings = <
 &trans                  &trans  &kp END                  &trans  &trans                    &trans  &kp DELETE      &kp UP_ARROW    &kp BACKSPACE  &kp MINUS
-&kp HOME                &none   &kp END                  &trans  &trans  &trans    &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp COLON
-&kp LG(LS(LEFT_ARROW))  &trans  &kp LS(LG(RIGHT_ARROW))  &trans  &trans  &trans    &trans  &trans  &trans          &trans          &trans         &kp NON_US_BACKSLASH
+&kp HOME                &none   &kp END                  &trans  &trans  &trans    &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp JP_COLON
+&kp LG(LS(LEFT_ARROW))  &trans  &kp LS(LG(RIGHT_ARROW))  &trans  &trans  &trans    &trans  &trans  &trans          &trans          &trans         &kp JP_BSLH
 &trans                  &trans  &trans                   &trans  &trans  &trans    &trans  &trans                                                 &trans
             >;
 
@@ -96,10 +136,10 @@
 
         layer_2 {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH        &kp DOLLAR      &kp PERCENT                               &kp AMPS      &kp APOS    &kp LPAR   &kp RPAR        &kp PIPE2
-&kp LC(A)        &kp LC(S)          &kp LANGUAGE_2  &kp LANGUAGE_1  &kp LANGUAGE_5  &none     &kp UNDERSCORE  &kp KP_MINUS  &kp CARET   &kp AT     &kp LBKT        &kp RBKT
-&kp LC(Z)        &kp LC(X)          &kp LC(C)       &kp LC(V)       &trans          &trans    &trans          &kp KP_EQUAL  &kp TILDE2  &kp GRAVE  &kp LEFT_BRACE  &kp RIGHT_BRACE
-&trans           &trans             &trans          &trans          &trans          &trans    &trans          &trans                                               &kp PIPE
+&kp EXCLAMATION  &kp JP_DQT         &kp HASH        &kp DOLLAR      &kp PERCENT                               &kp JP_AMPS   &kp JP_SQT    &kp JP_LPAR   &kp JP_RPAR   &kp JP_PIPE
+&kp LC(A)        &kp LC(S)          &kp LANGUAGE_2  &kp LANGUAGE_1  &kp JP_ZKHK     &none     &kp JP_UNDER    &kp KP_MINUS  &kp CARET     &kp JP_AT     &kp JP_LBKT   &kp JP_RBKT
+&kp LC(Z)        &kp LC(X)          &kp LC(C)       &kp LC(V)       &trans          &trans    &trans          &kp JP_EQUAL  &kp JP_TILDE  &kp JP_GRAVE  &kp JP_LBRC   &kp JP_RBRC
+&trans           &trans             &trans          &trans          &trans          &trans    &trans          &trans                                                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp BACKSPACE DELETE>;
