@@ -146,7 +146,7 @@
         layer_2 {
             bindings = <
 &kp EXCLAMATION  &kp JP_DQT  &kp HASH        &kp DOLLAR      &kp PERCENT                          &kp JP_AMPS   &kp JP_SQT    &kp JP_LPAR   &kp JP_RPAR  &kp JP_PIPE
-&kp LC(A)        &kp LC(S)   &kp LANGUAGE_2  &kp LANGUAGE_1  &kp JP_ZKHK  &none     &kp JP_UNDER  &kp KP_MINUS  &kp CARET     &kp JP_AT     &kp JP_LBKT  &kp JP_RBKT
+&kp LC(A)        &kp LC(S)   &kp LANGUAGE_2  &kp LANGUAGE_1  &kp JP_ZKHK  &none     &kp JP_UNDER  &kp KP_MINUS  &kp JP_CARET  &kp JP_AT     &kp JP_LBKT  &kp JP_RBKT
 &kp LC(Z)        &kp LC(X)   &kp LC(C)       &kp LC(V)       &kp LC(B)    &trans    &trans        &kp JP_EQUAL  &kp JP_TILDE  &kp JP_GRAVE  &kp JP_LBRC  &kp JP_RBRC
 &trans           &trans      &trans          &trans          &trans       &trans    &trans        &trans                                                 &trans
             >;
